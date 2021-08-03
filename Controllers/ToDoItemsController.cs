@@ -52,8 +52,6 @@ namespace MyToDoWebApi.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(toDoItemDTO).State = EntityState.Modified;
-
             var todoItem = await _context.TodoItems.FindAsync(id);
             if (todoItem == null)
             {
